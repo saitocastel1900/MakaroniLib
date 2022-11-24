@@ -14,7 +14,7 @@ namespace Saito.SoundManager
     public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         #region Singleton
-
+/*
         private void Awake()
         {
             if (this != Instance)
@@ -26,7 +26,7 @@ namespace Saito.SoundManager
 
             DontDestroyOnLoad(this.gameObject);
         }
-
+*/
         #endregion
 
         [Header("AudioSource")] 
