@@ -52,12 +52,15 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     /// <summary>
         /// Awake
         /// </summary>
-        protected virtual void Awake()
+        protected  void Awake()
         {
-            // 他のGameObjectにアタッチされている場合は破棄する
             if (this != Instance)
             {
-                Destroy(this);
+                Debug.LogError("インスタンスが既に存在しています。インスタンスを一つにするためこのインスタンスを破棄します");
+                Destroy(this.gameObject);
+                return;
             }
+
+            DontDestroyOnLoad(this.gameObject);
         }
 }
