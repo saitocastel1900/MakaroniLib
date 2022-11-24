@@ -49,4 +49,15 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
             return _instance;
         }
     }
+    /// <summary>
+        /// Awake
+        /// </summary>
+        protected virtual void Awake()
+        {
+            // 他のGameObjectにアタッチされている場合は破棄する
+            if (this != Instance)
+            {
+                Destroy(this);
+            }
+        }
 }
